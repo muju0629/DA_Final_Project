@@ -1,0 +1,11 @@
+pandas>=2.1
+numpy>=1.26
+matplotlib>=3.8
+seaborn>=0.13
+statsmodels>=0.14
+x13binary
+requests>=2.31
+python-dotenv>=1.0
+openpyxl>=3.1
+pyreadstat>=1.2
+jupyterlab>=4.0
