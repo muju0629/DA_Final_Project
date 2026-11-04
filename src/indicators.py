@@ -4,6 +4,7 @@
 """
 from __future__ import annotations
 
+import numpy as np
 import pandas as pd
 
 
@@ -70,17 +71,20 @@ def extended_indicators(
 
 
 def validate_against_published(recalc: pd.Series, published: pd.Series, tol: float = 0.1) -> pd.DataFrame:
-    """재계산값과 공표값 비교. 반올림 오차(tol %p)를 넘는 행을 표시한다."""
+    """공표값과 비교한다. 결측·무한대도 검증 실패로 표시한다 (tol 단위: %p)."""
     out = pd.DataFrame({"recalc": recalc, "published": published})
-    out["diff"] = (out["recalc"] - out["published"]).round(3)
-    out["exceeds_tol"] = out["diff"].abs() > tol
+    diff = out["recalc"] - out["published"]
+    out["diff"] = diff.round(3)
+    out["invalid_data"] = ~np.isfinite(out[["recalc", "published"]]).fillna(False).all(axis=1)
+    # 표시는 반올림하되 판정에는 원래 차이를 사용한다. 경계의 부동소수점 오차만 허용한다.
+    out["exceeds_tol"] = out["invalid_data"] | (diff.abs() > tol + 1e-12)
     return out
 
 
 def rse_confidence_interval(unemployed, labor_force, rse: float, z: float = 1.96) -> pd.DataFrame:
     """실업자 수 RSE로 실업률 95% 신뢰구간을 근사한다 (경활인구 오차는 무시하는 단순 근사).
 
-    rse : 상대표준오차 (예: 0.03 = 3%). 청년 RSE 공표치가 없으므로 여러 값으로 민감도 분석할 것.
+    rse : 상대표준오차 (예: 0.03 = 3%). 적용 가능한 청년 RSE를 확인하지 못하면 가정값을 명시해 민감도 분석만 할 것.
     """
     rate = unemployed / labor_force * 100
     half = z * rse * rate

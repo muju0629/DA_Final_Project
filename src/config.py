@@ -7,7 +7,7 @@ DATA_PROCESSED = ROOT / "data" / "processed"
 DATA_EXTERNAL = ROOT / "data" / "external"
 FIGURES = ROOT / "reports" / "figures"
 
-# 분석 기간: 2026.9부터 KSCO 8차·KSIC 11차 적용 → 2026.8에서 끊는다
+# 잠정 분석 기간. 표별 제공 범위와 분류 개정·시계열 연속성을 확인한 뒤 확정한다.
 START = "201501"
 END = "202608"
 
@@ -18,7 +18,7 @@ AI_SHOCK = "2022-12"
 # TODO: None 인 표와 '확인 필요' 표는 1주차에 KOSIS 화면에서 직접 확정
 KOSIS_ORG_ID = "101"
 TABLES = {
-    "econ_pop_by_age": "DT_1DA7002S",       # 성/연령별 경제활동인구 (확인됨)
+    "econ_pop_by_age": "DT_1DA7002S",       # 성/연령별 경제활동인구 (기존 후보; 사용 전 재확인)
     "supp_indicators_youth": None,          # 고용보조지표(청년층) — 확인 필요
     "inactive_by_activity": "DT_1DA7147S",  # 연령별 비경활 활동상태('쉬었음') — 확인 필요
     "emp_by_industry": "DT_1DA7E33S_NEW",   # 산업별 취업자 — 확인 필요
