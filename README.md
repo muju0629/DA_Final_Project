@@ -93,7 +93,7 @@ Notion에 적힌 점검일을 기준으로 진행한다. 아래 산출물은 이
 - `src/indicators.py`: 공식·보조·자체 확장지표, 공표값 비교, RSE 근사
 - `src/decompose.py`: 인구·고용률 분해와 연령 표준화
 - `notebooks/01~06`: 수집, 탐색, 재계산, 인구구성 분해, 선택 확장지표, AI 관계 분석의 초안
-- `notebooks/07~08`: AI 노출도 EDA와 분석용 패널 전처리. 설계와 결과는 [`docs/ai_exposure_design_eda.md`](docs/ai_exposure_design_eda.md)
+- `notebooks/07~10`: AI 노출도 EDA, 분석용 패널 전처리, MDIS 원자료 합치기와 전처리(원자료는 각자 받아야 함). 설계와 결과는 [`docs/ai_exposure_design_eda.md`](docs/ai_exposure_design_eda.md)
 - `docs/`: 데이터 사전과 참고자료
 - `reports/figures/`: 그래프 저장 위치
 - `tests/`: 계산식과 결측·검증 오류를 확인하는 테스트
