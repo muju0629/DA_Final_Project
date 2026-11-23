@@ -4,6 +4,17 @@ data/processed/*
 data/external/*
 !data/**/.gitkeep
 
+# 예외: 공개 자료와 그것으로 만든 AI 노출도 분석용 파일 (출처는 data/README.md)
+# MDIS 원자료는 계속 올리지 않는다
+!data/raw/kosis/
+!data/raw/ilo_wp140/
+!data/raw/epoch_eci/
+!data/raw/ksco_isco/
+!data/processed/panel_mid.csv
+!data/processed/panel_analysis.csv
+!data/processed/panel_analysis_codebook.csv
+!data/processed/eci_ref.csv
+
 # 비밀
 .env
 

@@ -52,7 +52,7 @@
 
 KOSIS 표 ID와 MDIS 변수명은 [`docs/data_dictionary.md`](docs/data_dictionary.md)에 기록한다. `config.TABLES`에는 확인이 필요한 후보 ID도 있으므로, 코드에 값이 있다는 이유만으로 사용을 확정하지 않는다. 아직 `None`인 표는 ID를 확인한 뒤 수집한다. API의 항목·분류 파라미터도 표마다 확인해야 한다.
 
-MDIS에서 필요한 변수를 구하지 못하면 해당 지표의 재계산은 보류하고 KOSIS 공표값 비교까지 수행한다. 세부 직업코드나 연결 가중치가 없으면 AI 분석의 범위를 줄인다. 원자료와 API 키는 커밋하지 않는다. `data/raw`, `data/processed`, `data/external`의 자료 파일은 Git에서 제외된다.
+MDIS에서 필요한 변수를 구하지 못하면 해당 지표의 재계산은 보류하고 KOSIS 공표값 비교까지 수행한다. 세부 직업코드나 연결 가중치가 없으면 AI 분석의 범위를 줄인다. 원자료와 API 키는 커밋하지 않는다. `data/raw`, `data/processed`, `data/external`의 자료 파일은 Git에서 제외된다. 예외로 AI 노출도 분석에 쓰는 공개 자료와 가공 파일은 포함한다(출처는 [`data/README.md`](data/README.md)). MDIS 원자료는 계속 제외한다.
 
 ## 4. 그래프와 통계분석 계획
 
@@ -93,6 +93,7 @@ Notion에 적힌 점검일을 기준으로 진행한다. 아래 산출물은 이
 - `src/indicators.py`: 공식·보조·자체 확장지표, 공표값 비교, RSE 근사
 - `src/decompose.py`: 인구·고용률 분해와 연령 표준화
 - `notebooks/01~06`: 수집, 탐색, 재계산, 인구구성 분해, 선택 확장지표, AI 관계 분석의 초안
+- `notebooks/07~08`: AI 노출도 EDA와 분석용 패널 전처리. 설계와 결과는 [`docs/ai_exposure_design_eda.md`](docs/ai_exposure_design_eda.md)
 - `docs/`: 데이터 사전과 참고자료
 - `reports/figures/`: 그래프 저장 위치
 - `tests/`: 계산식과 결측·검증 오류를 확인하는 테스트
