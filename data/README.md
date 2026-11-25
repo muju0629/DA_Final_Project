@@ -9,7 +9,7 @@ AI 노출도 분석에 쓰는 파일만 저장소에 포함한다. 모두 2026-1
 | `raw/ilo_wp140/Final_Scores_ISCO08_Gmyrek_et_al_2025.xlsx` | Gmyrek, P. 외 (2025). *Generative AI and Jobs: A Refined Global Index of Occupational Exposure*. ILO Working Paper 140. © ILO. https://doi.org/10.54394/HETP0387 (파일: https://github.com/pgmyrek/2025_GenAI_scores_ISCO08) | CC BY 4.0 |
 | `raw/epoch_eci/eci_scores.csv` | Epoch AI, "Epoch Capabilities Index". https://epoch.ai/eci | CC BY 4.0 |
 | `raw/ksco_isco/한국표준직업분류(KSCO 8차)-국제표준직업분류(ISCO-08) 연계표_20251103085955.xlsx` | 국가데이터처 통계분류포털 연계표 게시판 (2025-11-03 게시) | 미확인 |
-| `processed/panel_mid.csv`, `processed/eci_ref.csv` | 위 자료로 `notebooks/07_ai_exposure_eda.ipynb`가 만듦 | — |
-| `processed/panel_analysis.csv`, `processed/panel_analysis_codebook.csv` | `notebooks/08_ai_panel_preprocess.ipynb`가 만듦. 열 설명은 codebook 파일 | — |
+| `processed/panel_mid.csv`, `processed/eci_ref.csv` | 위 자료로 `notebooks/01_panel.ipynb`가 만듦 | — |
+| `processed/panel_analysis.csv`, `processed/panel_analysis_codebook.csv` | `notebooks/01_panel.ipynb`가 만듦. 열 설명은 codebook 파일 | — |
 
 ECI는 갱신될 때 과거 점수도 바뀌므로 이 파일(2026-11-11 기준)로 고정한다. MDIS 원자료는 저장소에 올리지 않는다.
